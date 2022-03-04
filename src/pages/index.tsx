@@ -76,14 +76,14 @@ const IndexPage = () => {
       <h1 className="hidden">Slapen By De Colts</h1>
       <div className="absolute inset-0 bg-white opacity-50"></div>
       <GatsbyImage
-        className="max-w-[50%] shrink-0"
+        className="max-w-[80%] md:max-w-[50%] shrink-0"
         image={getImage(data.logo) as IGatsbyImageData}
         alt="Logo"
       />
-      <section className="m-8 shrink-0">
+      <section className="m-4 md:m-8 shrink-0">
         <a title="Stuur ons een e-mail" href="mailto:overnachten@colthoff.nl">
           <GatsbyImage
-            className="w-[75px] mx-4"
+            className="w-[25px] md:w-[75px] mx-2 md:mx-4"
             image={getImage(data.email) as IGatsbyImageData}
             alt="e-mail"
           />
@@ -94,7 +94,7 @@ const IndexPage = () => {
           target="_blank"
         >
           <GatsbyImage
-            className="w-[75px] mx-4"
+            className="w-[25px] md:w-[75px] mx-2 md:mx-4"
             image={getImage(data.airbnb) as IGatsbyImageData}
             alt="airbnb"
           />
@@ -105,7 +105,7 @@ const IndexPage = () => {
           target="_blank"
         >
           <GatsbyImage
-            className="w-[75px] mx-4"
+            className="w-[25px] md:w-[75px] mx-2 md:mx-4"
             image={getImage(data.bedandbreakfast) as IGatsbyImageData}
             alt="bedandbreakfast"
           />
