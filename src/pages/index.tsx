@@ -1,6 +1,11 @@
 import { graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
-import { GatsbyImage, IGatsbyImageData, getImage } from "gatsby-plugin-image";
+import {
+  GatsbyImage,
+  IGatsbyImageData,
+  getImage,
+  getSrc,
+} from "gatsby-plugin-image";
 import React from "react";
 import Helmet from "react-helmet";
 
@@ -45,6 +50,12 @@ const IndexPage = () => {
             gatsbyImageData(quality: 90, formats: [AUTO, WEBP, AVIF])
           }
         }
+
+        maps: file(relativePath: { eq: "maps.png" }) {
+          childImageSharp {
+            gatsbyImageData(quality: 90, formats: [AUTO, WEBP, AVIF])
+          }
+        }
       }
     `
   );
@@ -59,8 +70,7 @@ const IndexPage = () => {
       className="w-full h-screen bg-cover bg-center flex flex-col justify-center items-center relative"
     >
       <Helmet>
-        <title>Slapen By De Colts</title>
-
+        <title>Slapen by de Colts - Bed and breakfast in Soest</title>
         <meta name="title" content="Slapen By De Colts" />
         <meta
           name="description"
@@ -72,6 +82,12 @@ const IndexPage = () => {
         />
         <meta name="robots" content="index, follow" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta property="og:title" content="Slapen By De Colts" />
+        <meta
+          property="og:description"
+          content="Ruim appartement van 80m2, onder ons huis met eigen ingang, daglicht en volop privacy. Het is recent gebouwd en van alle comfort voorzien. Zo is er een slaapkamer met 2-pers. boxspring, volledig ingerichte keuken met keramische kookplaat, oven, koelkast, magnetron en vaatwasser. Ook heeft het een fitnessruimte, douche en apart toilet. In de woonkamer staat een royale eettafel een grote smart-tv en hoekbank (slaapbank). De ruimte is ook zeer geschikt als werkplek of vergaderruimte."
+        />
+        <meta property="og:image" content={getSrc(data.picture)} />{" "}
       </Helmet>
       <h1 className="hidden">Slapen By De Colts</h1>
       <div className="absolute inset-0 bg-white opacity-50"></div>
@@ -83,9 +99,9 @@ const IndexPage = () => {
       <section className="m-4 md:m-8 shrink-0">
         <a title="Stuur ons een e-mail" href="mailto:overnachten@colthoff.nl">
           <GatsbyImage
-            className="w-[25px] md:w-[75px] mx-2 md:mx-4"
+            className="hover:bg-white rounded-full w-[50px] md:w-[75px] mx-2 md:mx-4"
             image={getImage(data.email) as IGatsbyImageData}
-            alt="e-mail"
+            alt="E-mail"
           />
         </a>
         <a
@@ -94,9 +110,9 @@ const IndexPage = () => {
           target="_blank"
         >
           <GatsbyImage
-            className="w-[25px] md:w-[75px] mx-2 md:mx-4"
+            className="hover:bg-white rounded-full w-[50px] md:w-[75px] mx-2 md:mx-4"
             image={getImage(data.airbnb) as IGatsbyImageData}
-            alt="airbnb"
+            alt="Airbnb"
           />
         </a>
         <a
@@ -105,11 +121,29 @@ const IndexPage = () => {
           target="_blank"
         >
           <GatsbyImage
-            className="w-[25px] md:w-[75px] mx-2 md:mx-4"
+            className="hover:bg-white rounded-full w-[50px] md:w-[75px] mx-2 md:mx-4"
             image={getImage(data.bedandbreakfast) as IGatsbyImageData}
-            alt="bedandbreakfast"
+            alt="Bed and breakfast"
           />
         </a>
+        <a
+          title="Bekijk ons op Google Maps"
+          href="https://goo.gl/maps/weSSRsTFXe7zvSmy7"
+          target="_blank"
+        >
+          <GatsbyImage
+            className="hover:bg-white rounded-full w-[50px] md:w-[75px] mx-2 md:mx-4"
+            image={getImage(data.maps) as IGatsbyImageData}
+            alt="Google Maps"
+          />
+        </a>
+      </section>
+      <section className="m-2 shrink-0">
+        <p className="text-white italic text-center">
+          Slapen by de Colts - Bed and breakfast in Soest
+          <br />
+          Willem de Zwijgerlaan 46, 3761 CR Soest
+        </p>
       </section>
     </BackgroundImage>
   );
