@@ -116,17 +116,6 @@ const IndexPage = () => {
           />
         </a>
         <a
-          title="Bekijk ons op Bed and Breakfast"
-          href="https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.bedandbreakfast.nl%2Fnl%2Fa%2F76265%2Fb-b-slapen-by-de-colts%2F&data=04%7C01%7C%7C0f62e2b63b6741199f0c08d9f8653f75%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637813936108576425%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=LYUp7R2VMFV0Ky8fSChe7Rspjjr4uppcwZpIeja8GCk%3D&reserved=0"
-          target="_blank"
-        >
-          <GatsbyImage
-            className="hover:bg-white rounded-full w-[50px] md:w-[75px] mx-2 md:mx-4"
-            image={getImage(data.bedandbreakfast) as IGatsbyImageData}
-            alt="Bed and breakfast"
-          />
-        </a>
-        <a
           title="Bekijk ons op Google Maps"
           href="https://goo.gl/maps/weSSRsTFXe7zvSmy7"
           target="_blank"
